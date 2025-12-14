@@ -48,6 +48,7 @@ function PlaceField({ placedFields, setPlacedFields, goNext }) {
 
   return (
     <div style={{ display: "flex", height: "100vh" }}>
+      {/* Left Pane */}
       {/* PDF Viewer */}
       <div ref={pdfRef} style={{ width: "70%", position: "relative" }}>
         <PdfViewer fileUrl="/blank_pdf.pdf" />
@@ -60,8 +61,8 @@ function PlaceField({ placedFields, setPlacedFields, goNext }) {
               position: "absolute",
               top: f.y,
               left: f.x,
-              background: "#a8d8feff",
-              padding: "8px 20px",
+              background: "#fff",
+              padding: "6px 20px",
               borderRadius: 4,
               border: "1px solid #999",
               pointerEvents: "none", // fields are not editable here
@@ -73,24 +74,26 @@ function PlaceField({ placedFields, setPlacedFields, goNext }) {
       </div>
 
       {/* Right Pane */}
+      {/* Complete Pane */}
       <div
         style={{
           width: "30%",
           padding: 20,
           background: "#f3f3f3",
           borderLeft: "1px solid #ccc",
-          position: "relative",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
         }}
       >
-        {/* <h3>Drag Field</h3> */}
+        {/* Input Box */}
         <div
           onMouseDown={startDrag}
           style={{
-            width: "95%",
-            padding: 10,
-            background: "#58aff6ff",
-            color: "white",
-            borderRadius: 4,
+            width: "70%",
+            padding: "6px 10px",
+            border: "1px solid #111",
+            borderRadius: 2,
             cursor: "grab",
             textAlign: "center",
           }}
@@ -98,28 +101,14 @@ function PlaceField({ placedFields, setPlacedFields, goNext }) {
           Input Text
         </div>
 
-        {/* Floating ghost while dragging */}
-        {isDragging && (
-          <div
-            style={{
-              position: "fixed",
-              top: dragPos.y + 5,
-              left: dragPos.x + 5,
-              background: "#2196F3",
-              color: "white",
-              padding: "8px 12px",
-              borderRadius: 4,
-              pointerEvents: "none",
-              opacity: 0.8,
-            }}
-          >
-            Input Text
-          </div>
-        )}
-
+        {/* Save and Go To Next Screen */}
         <button
           onClick={goNext}
-          style={{ marginTop: 30, padding: 10, width: "100%", alignItems: 'end' }}
+          style={{
+            marginTop: "auto",
+            padding: 10,
+            width: "80%",
+          }}
         >
           Save & Next
         </button>

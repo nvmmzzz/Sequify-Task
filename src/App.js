@@ -8,7 +8,8 @@ function App() {
 
   return (
     <>
-      {screen === 1 && (
+      {screen === 1 && ( 
+        // just for placing the text field on the PDF
         <PlaceField
           placedFields={placedFields}
           setPlacedFields={setPlacedFields}
@@ -17,6 +18,7 @@ function App() {
       )}
 
       {screen === 2 && (
+        // for typing and then downloading the edited PDF
         <TypeAndDownload
           placedFields={placedFields}
           reset={() => {

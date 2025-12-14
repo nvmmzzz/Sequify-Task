@@ -83,7 +83,7 @@ const downloadPdf = async () => {
           onClick={downloadPdf}
           style={{ padding: 10, width: "100%", marginTop: 20 }}
         >
-          Download PDF
+          Download And Reset
         </button>
       </div>
     </div>
