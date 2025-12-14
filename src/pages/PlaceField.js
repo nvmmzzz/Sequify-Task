@@ -3,7 +3,7 @@ import PdfViewer from "../components/PdfViewer";
 
 function PlaceField({ placedFields, setPlacedFields, goNext }) {
   const [isDragging, setIsDragging] = useState(false);
-  const [dragPos, setDragPos] = useState({ x: 0, y: 0 });
+  const [, setDragPos] = useState({ x: 0, y: 0 });
   const pdfRef = useRef(null);
 
   const startDrag = (e) => {
